@@ -6,7 +6,7 @@ import sys
 import shutil
 
 # sys.argv[1] ==> path to the data folder
-# sys.argv[2] ==> path to the new data folder
+# sys.argv[2] ==> path to the new data folder, note that this CREATES a new folder, can't already exist
 
 
 # initializing a set that will contain the filenames of all of the faulty images
@@ -34,7 +34,7 @@ for root, dirs, files in os.walk(sys.argv[1]+'/'):
 	for file in files:
 		# Looking into the catalog files
 		if file.endswith(".catalog"):
-			print(file)
+			#print(file)
 			# opening the catalog files in read mode
 			with open(root+file,'r') as catalog_file_read:
 				# Creating a list of lines to go through
@@ -45,8 +45,12 @@ for root, dirs, files in os.walk(sys.argv[1]+'/'):
 					for line in lines:
 						# reading in the filename from the line
 						filename = line.split('\"')[11]
+						# seeing if the faulty image is in the faulty images we found earlier.
 						if filename in faulty_image_set:
+							# printing out the faulty image
 							print(filename + "is faulty\n")
+							# skipping writing the line of the faulty file!
 							continue
+						# general case to copy the catalog file
 						catalog_file_write.write(line)
 						
