@@ -19,3 +19,6 @@ This example assumes that the python file is in the same directory as the data d
 
 All of the contents from data will be copied into fixed_data and all of the catalog files will have their references to faulty images removed. 
 Note that this will only work on linux as of right now. If the demand is required, you can just modify all of the '/' characters to '\\' and that will make it compatible with Windows.
+
+
+Quick low-quality video demonstrating the script: https://drive.google.com/file/d/1Qha2bK6-5LVsVVvbIRRZSmkpDW4iDSiq/view?usp=sharing
