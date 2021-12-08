@@ -22,3 +22,8 @@ Note that this will only work on linux as of right now. If the demand is require
 
 
 Quick low-quality video demonstrating the script: https://drive.google.com/file/d/1Qha2bK6-5LVsVVvbIRRZSmkpDW4iDSiq/view?usp=sharing
+
+Libraries used:
+- shutil
+- os
+- sys
